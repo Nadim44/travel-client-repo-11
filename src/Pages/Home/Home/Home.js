@@ -1,9 +1,11 @@
 import React from 'react';
+import Places from '../Places/Places';
 
 const Home = () => {
     return (
-        <div>
+        <div className='m-4 '>
             <h1>this is home</h1>
+            <Places></Places>
         </div>
     );
 };
