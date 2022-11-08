@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-const ReviewRow = ({ review }) => {
-    const { placeName, message, ratings, place } = review;
+const PurchaseTicketRow = ({ ticket, handleDelete }) => {
+    const { _id, placeName, price, message, place } = ticket;
     const [selectPlace, setSelectPlace] = useState({})
 
     useEffect(() => {
@@ -9,11 +9,13 @@ const ReviewRow = ({ review }) => {
             .then(res => res.json())
             .then(data => setSelectPlace(data))
     }, [place])
+
+
     return (
         <tr>
             <th>
                 <label>
-                    <button className='btn btn-ghost'>X</button>
+                    <button onClick={() => handleDelete(_id)} className='btn btn-ghost'>X</button>
                 </label>
             </th>
             <td>
@@ -24,25 +26,25 @@ const ReviewRow = ({ review }) => {
                                 selectPlace?.img &&
                                 <img src={selectPlace.img} alt="Avatar Tailwind CSS Component" />
                             }
+
                         </div>
                     </div>
                     <div>
-                        <div className="font-bold">{placeName}</div>
+                        <div className="font-bold"> {placeName}</div>
 
                     </div>
                 </div>
             </td>
             <td>
-                {ratings}
+                $ {price}
             </td>
             <td>{message}</td>
+
             <th>
                 <button className="btn btn-ghost btn-xs">details</button>
             </th>
         </tr>
-
-
     );
 };
 
-export default ReviewRow;
+export default PurchaseTicketRow;

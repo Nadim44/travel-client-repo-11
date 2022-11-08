@@ -13,10 +13,14 @@ const Details = () => {
                     <p><span className='text-xl font-semibold text-orange-600'>Cost</span>: ${price}</p>
                     <p><span className='text-xl font-semibold text-green-600'>Ratings</span>: {ratings}</p>
                 </div>
-                <div className="card-actions justify-end">
+                <div className="card-actions justify-between">
                     {/* <button className="btn btn-primary">Buy Now</button> */}
                     <Link to={`/review/${_id}`}>
                         <button className="btn btn-primary">Review</button>
+                    </Link>
+
+                    <Link to={`/purchase/${_id}`}>
+                        <button className="btn btn-primary">Purchase ticket</button>
                     </Link>
                 </div>
             </div>

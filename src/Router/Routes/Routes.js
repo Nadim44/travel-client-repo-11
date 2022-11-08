@@ -6,6 +6,8 @@ import Review from "../../Pages/Home/Places/Review";
 import SeeAll from "../../Pages/Home/Places/SeeAll";
 import Login from "../../Pages/Login/Login";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
+import Purchase from "../../Pages/Purchase/Purchase";
+import PurchaseTicket from "../../Pages/PurchaseTicket/PurchaseTicket";
 import SignUp from "../../Pages/SignUp/SignUp";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -48,6 +50,15 @@ const router = createBrowserRouter([
             {
                 path: '/review',
                 element: <MyReviews></MyReviews>
+            },
+            {
+                path: '/purchase/:id',
+                element: <Purchase></Purchase>,
+                loader: ({ params }) => fetch(`http://localhost:5000/places/${params.id}`)
+            },
+            {
+                path: '/purchase',
+                element: <PurchaseTicket></PurchaseTicket>
             }
 
 
