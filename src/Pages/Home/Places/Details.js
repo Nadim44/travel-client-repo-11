@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
-const PlaceCard = ({ place }) => {
-    const { img, price, ratings, title, description, _id } = place;
+const Details = () => {
+    const { title, img, description, price, ratings } = useLoaderData()
     return (
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        <div className="card card-compact w-3/4 mx-auto bg-base-100 shadow-xl m-4">
             <figure><img src={img} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title font-bold text-2xl">{title}</h2>
@@ -15,14 +15,10 @@ const PlaceCard = ({ place }) => {
                 </div>
                 <div className="card-actions justify-end">
                     <button className="btn btn-primary">Buy Now</button>
-                    <Link to={`/place/${_id}`}>
-                        <button className="btn btn-primary">Details</button>
-                    </Link>
-
                 </div>
             </div>
         </div>
     );
 };
 
-export default PlaceCard;
+export default Details;

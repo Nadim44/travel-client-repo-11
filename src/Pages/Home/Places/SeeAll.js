@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import PlaceCard from './PlaceCard';
 
 const SeeAll = () => {
     const [places, setPlaces] = useState([])
     useEffect(() => {
-        fetch('places.json')
+        fetch('http://localhost:5000/places')
             .then(res => res.json())
             .then(data => setPlaces(data))
     }, [])
@@ -23,6 +24,11 @@ const SeeAll = () => {
 
                     ></PlaceCard>)
                 }
+            </div>
+            <div className="card-actions justify-center">
+                <button className="btn btn-primary"><Link to='/'>Back</Link></button>
+
+
             </div>
         </div>
     );
