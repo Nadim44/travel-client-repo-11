@@ -3,14 +3,24 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import PurchaseTicketRow from './PurchaseTicketRow';
 
 const PurchaseTicket = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const [purchaseTicket, setPurchaseTicket] = useState([]);
-    
+
     useEffect(() => {
-        fetch(`http://localhost:5000/purchase?email=${user?.email}`)
-            .then(res => res.json())
+        // fetch(`http://localhost:5000/purchase?email=${user?.email}`)
+        fetch(`http://localhost:5000/purchase?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('travel-token')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    return logOut()
+                }
+                return res.json()
+            })
             .then(data => setPurchaseTicket(data))
-    }, [user?.email])
+    }, [user?.email, logOut])
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to cancel this ticket')

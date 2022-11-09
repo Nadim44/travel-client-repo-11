@@ -50,7 +50,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/review',
-                element: <MyReviews></MyReviews>
+                element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
             },
             {
                 path: '/purchase/:id',
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/purchase',
-                element: <PurchaseTicket></PurchaseTicket>
+                element: <PrivateRoute><PurchaseTicket></PurchaseTicket></PrivateRoute>
             }
 
 
