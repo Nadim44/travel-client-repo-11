@@ -11,7 +11,6 @@ const SeeAll = () => {
     }, [])
     return (
         <div>
-            <h1>see all</h1>
             <div className='text-center mb-4'>
                 <p className='text-2xl font-bold text-orange-600 '>Choose your Travel place!!</p>
                 <p>Travelers always travel to the most beautiful places of the world which uphold the existence of nature.</p>
