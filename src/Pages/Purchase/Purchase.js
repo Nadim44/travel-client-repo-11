@@ -5,7 +5,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 const Purchase = () => {
     const { _id, title, price } = useLoaderData();
     const { user } = useContext(AuthContext)
-    const handleReview = event => {
+    const handlePurchase = event => {
         event.preventDefault();
         const form = event.target;
         const name = `${form.firstName.value} ${form.lastName.value}`;
@@ -44,7 +44,7 @@ const Purchase = () => {
     }
     return (
         <div className='bg-gray-300 rounded-lg'>
-            <form onSubmit={handleReview}>
+            <form onSubmit={handlePurchase}>
                 <h2 className='text-4xl mt-4 text-center'>Place Name: <span className='text-orange-600'>{title}</span></h2>
                 <h2 className='mb-4 text-3xl  text-center' ><span className=''>Travel Cost :</span> $ <span className=' text-blue-600'>{price}</span></h2>
 

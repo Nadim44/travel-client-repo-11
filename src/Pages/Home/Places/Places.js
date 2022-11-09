@@ -12,8 +12,9 @@ const Places = () => {
 
     return (
         <div>
-            <div>
-                <p className='text-2xl font-bold text-orange-600 text-center mb-4'>Places</p>
+            <div className='text-center mb-4'>
+                <p className='text-2xl font-bold text-orange-600 '>Choose your Travel place!!</p>
+                <p>Travelers always travel to the most beautiful places of the world which uphold the existence of nature.</p>
             </div>
             <>
                 <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
@@ -26,8 +27,8 @@ const Places = () => {
                         ></PlaceCard>)
                     }
                 </div>
-                <div className="card-actions justify-center">
-                    <button className="btn btn-primary"><Link to='/seeAll'>See All</Link></button>
+                <div className="card-actions justify-center m-4">
+                    <button className="btn btn-warning"><Link to='/seeAll'>See All</Link></button>
                 </div>
             </>
         </div>
