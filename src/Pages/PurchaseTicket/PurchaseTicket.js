@@ -5,11 +5,11 @@ import PurchaseTicketRow from './PurchaseTicketRow';
 const PurchaseTicket = () => {
     const { user } = useContext(AuthContext);
     const [purchaseTicket, setPurchaseTicket] = useState([]);
+    
     useEffect(() => {
         fetch(`http://localhost:5000/purchase?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setPurchaseTicket(data))
-        // .then(data => console.log(data))
     }, [user?.email])
 
     const handleDelete = id => {
