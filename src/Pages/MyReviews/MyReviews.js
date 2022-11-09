@@ -8,8 +8,8 @@ const MyReviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        // fetch(`http://localhost:5000/review?email=${user?.email}`)
-        fetch(`http://localhost:5000/review?email=${user?.email}`, {
+        // fetch(`https://assignment-11-server-liard.vercel.app/review?email=${user?.email}`)
+        fetch(`https://assignment-11-server-liard.vercel.app/review?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('travel-token')}`
             }
@@ -27,7 +27,7 @@ const MyReviews = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to cancel this review');
         if (proceed) {
-            fetch(`http://localhost:5000/review/${id}`, {
+            fetch(`https://assignment-11-server-liard.vercel.app/review/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

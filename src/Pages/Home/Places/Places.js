@@ -5,7 +5,7 @@ import PlaceCard from './PlaceCard';
 const Places = () => {
     const [places, setPlaces] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/places')
+        fetch('https://assignment-11-server-liard.vercel.app/places')
             .then(res => res.json())
             .then(data => setPlaces(data))
     }, [])

@@ -41,12 +41,12 @@ const router = createBrowserRouter([
             {
                 path: '/place/:id',
                 element: <Details></Details>,
-                loader: ({ params }) => fetch(`http://localhost:5000/places/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-11-server-liard.vercel.app/places/${params.id}`)
             },
             {
                 path: '/review/:id',
                 element: <PrivateRoute><Review></Review></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/places/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-11-server-liard.vercel.app/places/${params.id}`)
             },
             {
                 path: '/review',
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
             {
                 path: '/purchase/:id',
                 element: <PrivateRoute> <Purchase></Purchase></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/places/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-11-server-liard.vercel.app/places/${params.id}`)
             },
             {
                 path: '/purchase',

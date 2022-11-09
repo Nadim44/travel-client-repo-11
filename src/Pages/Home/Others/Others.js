@@ -4,7 +4,7 @@ import OtherCard from './OtherCard';
 const Others = () => {
     const [others, setOthers] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/others')
+        fetch('https://assignment-11-server-liard.vercel.app/others')
             .then(res => res.json())
             .then(data => setOthers(data))
 

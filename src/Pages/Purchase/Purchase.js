@@ -23,7 +23,7 @@ const Purchase = () => {
             message
         }
 
-        fetch('http://localhost:5000/purchase', {
+        fetch('https://assignment-11-server-liard.vercel.app/purchase', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

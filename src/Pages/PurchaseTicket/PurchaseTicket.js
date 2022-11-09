@@ -7,8 +7,8 @@ const PurchaseTicket = () => {
     const [purchaseTicket, setPurchaseTicket] = useState([]);
 
     useEffect(() => {
-        // fetch(`http://localhost:5000/purchase?email=${user?.email}`)
-        fetch(`http://localhost:5000/purchase?email=${user?.email}`, {
+        // fetch(`https://assignment-11-server-liard.vercel.app/purchase?email=${user?.email}`)
+        fetch(`https://assignment-11-server-liard.vercel.app/purchase?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('travel-token')}`
             }
@@ -25,7 +25,7 @@ const PurchaseTicket = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to cancel this ticket')
         if (proceed) {
-            fetch(`http://localhost:5000/purchase/${id}`, {
+            fetch(`https://assignment-11-server-liard.vercel.app/purchase/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

@@ -5,7 +5,7 @@ const ReviewRow = ({ review, handleDelete }) => {
     const [selectPlace, setSelectPlace] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/places/${place}`)
+        fetch(`https://assignment-11-server-liard.vercel.app/places/${place}`)
             .then(res => res.json())
             .then(data => setSelectPlace(data))
     }, [place])
