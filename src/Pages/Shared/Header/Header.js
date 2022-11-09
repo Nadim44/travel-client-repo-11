@@ -38,7 +38,7 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">My Tourist world</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-4xl">Travel World</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -46,7 +46,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Get started</a>
+                <a className="btn">Others Places</a>
             </div>
         </div>
     );
