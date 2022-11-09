@@ -9,6 +9,7 @@ import MyReviews from "../../Pages/MyReviews/MyReviews";
 import Purchase from "../../Pages/Purchase/Purchase";
 import PurchaseTicket from "../../Pages/PurchaseTicket/PurchaseTicket";
 import SignUp from "../../Pages/SignUp/SignUp";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/review/:id',
-                element: <Review></Review>,
+                element: <PrivateRoute><Review></Review></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/places/${params.id}`)
             },
             {
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/purchase/:id',
-                element: <Purchase></Purchase>,
+                element: <PrivateRoute> <Purchase></Purchase></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/places/${params.id}`)
             },
             {
