@@ -22,11 +22,6 @@ const Details = () => {
                         <p><span className='text-xl font-semibold text-orange-600'>Travel Cost</span> : $ {price}</p>
                     </div>
                     <div className="card-actions justify-end">
-                        {/* <button className="btn btn-primary">Buy Now</button> */}
-                        {/* <Link to={`/review/${_id}`}>
-                            <button className="btn btn-primary">Review</button>
-                        </Link> */}
-
                         <Link to={`/purchase/${_id}`}>
                             <button className="btn btn-primary">Purchase ticket</button>
                         </Link>

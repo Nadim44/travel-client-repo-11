@@ -10,7 +10,6 @@ const MyReviews = () => {
     useTitle('MyReview')
 
     useEffect(() => {
-        // fetch(`https://assignment-11-server-liard.vercel.app/review?email=${user?.email}`)
         fetch(`https://assignment-11-server-liard.vercel.app/review?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('travel-token')}`
@@ -44,9 +43,10 @@ const MyReviews = () => {
         }
     }
 
+
     return (
         <div>
-            <h1 className='text-2xl'>You have {reviews.length} reviews</h1>
+            <h1 className='text-2xl my-4'>You have {reviews.length} reviews</h1>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
 
@@ -64,7 +64,6 @@ const MyReviews = () => {
                         </tr>
                     </thead>
                     <tbody>
-
                         {
                             reviews.map(review => <ReviewRow
                                 key={review._id}
@@ -72,14 +71,10 @@ const MyReviews = () => {
                                 handleDelete={handleDelete}
                             ></ReviewRow>)
                         }
-
-
-
                     </tbody>
-
-
                 </table>
             </div>
+
         </div>
     );
 };

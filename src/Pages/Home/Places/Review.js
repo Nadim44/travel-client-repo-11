@@ -11,7 +11,6 @@ const Review = () => {
     const handleReview = event => {
         event.preventDefault();
         const form = event.target;
-        // const name = `${form.firstName.value} ${form.lastName.value}`;
         const email = user?.email || 'unregistered';
         const ratings = form.ratings.value;
         const message = form.message.value;
@@ -20,7 +19,6 @@ const Review = () => {
             place: _id,
             placeName: title,
             price,
-            // customer: name,
             email,
             ratings,
             message
@@ -49,7 +47,7 @@ const Review = () => {
     return (
         <div className='bg-gray-300 rounded-lg'>
 
-            <h2 className='text-4xl mb-4 text-center mt-4'>Review to : <span className='text-orange-600'> {title}</span></h2>
+            <h2 className='text-4xl mb-4 text-center mt-4 pt-4'>Review to : <span className='text-orange-600'> {title}</span></h2>
             <form onSubmit={handleReview}>
                 <textarea name='message' className='textarea textarea-bordered h-24 w-full' placeholder='Your Message'></textarea>
 
@@ -59,7 +57,7 @@ const Review = () => {
                     <input name='email' type="email" placeholder="Email" defaultValue={user?.email} className="input input-ghost w-full input-bordered" readOnly />
                 </div>
 
-                <input className='btn' type="submit" value="Place your Review" />
+                <input className='btn m-4' type="submit" value="Place your Review" />
             </form>
         </div>
     );
