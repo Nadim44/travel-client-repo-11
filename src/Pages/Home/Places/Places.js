@@ -13,7 +13,7 @@ const Places = () => {
     return (
         <div>
             <div className='text-center mb-4 pt-6'>
-                <p className='text-4xl font-bold text-orange-600 '>Choose your Travel place!!</p>
+                <p className='text-4xl font-bold text-orange-600 '>Choose your Traveling places!!</p>
                 <p>Travelers always travel to the most beautiful places of the world which uphold the existence of nature.</p>
             </div>
             <>

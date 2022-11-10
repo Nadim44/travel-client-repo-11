@@ -6,6 +6,7 @@ import useTitle from '../../../hooks/useTitle';
 const Details = () => {
     const { title, img, description, price, ratings, _id } = useLoaderData()
     useTitle('Details')
+
     return (
         <div>
             <div className="card card-compact w-3/4 mx-auto bg-base-100 shadow-xl m-4">

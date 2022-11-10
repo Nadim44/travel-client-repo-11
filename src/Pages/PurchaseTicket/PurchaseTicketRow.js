@@ -41,7 +41,7 @@ const PurchaseTicketRow = ({ ticket, handleDelete }) => {
             <td>{message}</td>
 
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <button className="btn btn-ghost btn-xs">Update</button>
             </th>
         </tr>
     );

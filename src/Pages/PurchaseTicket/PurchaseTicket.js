@@ -57,7 +57,7 @@ const PurchaseTicket = () => {
                             <th>Name</th>
                             <th>Travel Cost</th>
                             <th>Message</th>
-                            <th></th>
+                            <th>Update options</th>
                         </tr>
                     </thead>
                     <tbody>
