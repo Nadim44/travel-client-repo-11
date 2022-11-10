@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import ReviewRow from './ReviewRow';
 
 
 const MyReviews = () => {
     const { user, logOut } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
+    useTitle('MyReview')
 
     useEffect(() => {
         // fetch(`https://assignment-11-server-liard.vercel.app/review?email=${user?.email}`)
@@ -44,7 +46,7 @@ const MyReviews = () => {
 
     return (
         <div>
-            <h1 className='text-5xl'>You have {reviews.length} reviews</h1>
+            <h1 className='text-2xl'>You have {reviews.length} reviews</h1>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
 

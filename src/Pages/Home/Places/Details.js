@@ -1,18 +1,25 @@
 import React from 'react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 
 const Details = () => {
     const { title, img, description, price, ratings, _id } = useLoaderData()
+    useTitle('Details')
     return (
         <div>
             <div className="card card-compact w-3/4 mx-auto bg-base-100 shadow-xl m-4">
-                <figure><img src={img} alt="Shoes" /></figure>
+                {/* <figure><img src={img} alt="Shoes" /></figure> */}
+                <PhotoProvider>
+                    <PhotoView src={img}>
+                        <figure><img src={img} alt="Shoes" /></figure>
+                    </PhotoView>
+                </PhotoProvider>
                 <div className="card-body">
                     <h2 className="card-title font-bold text-2xl">{title}</h2>
                     <p>{description}</p>
                     <div className='flex justify-between'>
                         <p><span className='text-xl font-semibold text-orange-600'>Travel Cost</span> : $ {price}</p>
-                        {/* <p><span className='text-xl font-semibold text-green-600'>Ratings</span>: {ratings}</p> */}
                     </div>
                     <div className="card-actions justify-end">
                         {/* <button className="btn btn-primary">Buy Now</button> */}

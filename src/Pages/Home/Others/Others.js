@@ -12,7 +12,9 @@ const Others = () => {
     return (
         <div className='mt-4'>
             <div>
-                <p className='text-center text-2xl font-bold text-orange-600'>Most beautiful place</p>
+                <p className='text-center text-4xl font-bold text-orange-600'>Most beautiful places!!!</p>
+                <p className='text-center mb-4'>There are many beautiful places in the world. But this places is the most beautiful places in the world.</p>
+
             </div>
             <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
